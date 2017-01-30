@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app ="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Social Club</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-cookies.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- For CHAT	 -->
+  <script src="lib/js/sockjs.js" type="text/javascript"></script>
+<script src="lib/js/stomp.js" type="text/javascript"></script>
+
+  
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<!-- <script src="lib/js/skel.min.js"></script>
+		<script src="lib/js/skel-panels.min.js"></script>
+		<script src="lib/js/init.js"></script>
+		<script src="lib/js/modernizr-2.6.2.min.js"></script>
+<script src="lib/js/jquery-1.10.2.min.js"></script>
+<script src="lib/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="css1/styles.css" />
+    <link rel="stylesheet" href="css1/image.css" />
+    <link rel="stylesheet" href="css1/footer-distributed-with-address-and-phones.css" />
+   <!--  <link rel="stylesheet" href="lib/css/bootstrap.min.css"> -->
+   <!-- <link rel="stylesheet" href="lib/css/style-desktop.css" /> -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+   <style >
+
+   </style>
+   <!-- <script>
+	$('#myCarousel').carousel({
+		interval: 1000
+	})
+</script> -->
+</head>
+<body >
+<div class="container-fluid"> 
+<div ng-include src="'S_common/header.html'"></div>
+</div>
+<div class="container-fluid" style="background-color: #fff ;width:100%; min-height:100%;margin-left:10px;position: relative;"> 
+ <div ng-view ></div>
+</div>
+<div ng-include src="'S_common/footer.html'"></div>
+
+<script src="app.js"></script>
+<script src="S_user/UserController.js"></script>
+<script src="S_user/UserService.js"></script>
+<script src="S_carousel/CarouselCtrl.js"></script>
+
+
+</body>
+
+</html>
