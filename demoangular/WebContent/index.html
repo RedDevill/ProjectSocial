@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+ 	<link rel="stylesheet" href="css1/styles.css" />
+    <link rel="stylesheet" href="css1/image.css" />
+    <link rel="stylesheet" href="css1/footer-distributed-with-address-and-phones.css" />
+   
+
+</head>
+
+<body ng-app="myApp">
+
+<div class="container-fluid"> 
+<div ng-include src="'S_common/header.html'"></div>
+</div>
+ <div ng-view ></div>
+<div ng-include src="'S_common/footer.html'"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
