@@ -96,7 +96,7 @@ public class UserController {
 	}
 
 	// http://localhost:8080/Collaboration/user/
-	@RequestMapping(value = "/user/", method = RequestMethod.POST)
+	@RequestMapping(value = "/register/", method = RequestMethod.POST)
 	public ResponseEntity<User> createUser(@RequestBody User user) {
 		logger.debug("->->->->calling method createUser");
 		if (userDAO.get(user.getUsername()) == null) {

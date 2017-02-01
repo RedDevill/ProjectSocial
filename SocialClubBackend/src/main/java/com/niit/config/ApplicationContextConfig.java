@@ -18,7 +18,7 @@ import com.niit.dao.UserDAO;
 import com.niit.model.User;
 
 @Configuration
-@ComponentScan("com.niit.collaboration")
+@ComponentScan("com.niit")
 @EnableTransactionManagement
 public class ApplicationContextConfig {
 	
@@ -27,22 +27,21 @@ public class ApplicationContextConfig {
 	public DataSource getOracleDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		
-		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
+		dataSource.setDriverClassName("org.h2.Driver");
+		dataSource.setUrl("jdbc:h2:tcp://localhost/~/social");
 		
-		dataSource.setUsername("COLB_DB"); //Schema name
+		dataSource.setUsername("sa"); //Schema name
 		dataSource.setPassword("root");
 
 		Properties connectionProperties = new Properties();
 		
 		connectionProperties.setProperty("hibernate.dialect",
-				   "org.hibernate.dialect.Oracle10gDialect");
-		
-		
+				   "org.hibernate.dialect.H2Dialect");
+		connectionProperties.setProperty("hibernate.hbm2ddl.auto","create");
 		dataSource.setConnectionProperties(connectionProperties);
 		return dataSource;
 	}
-/*	
+	
 	@Autowired
 	@Bean(name = "sessionFactory")
 	public SessionFactory getSessionFactory(DataSource dataSource) {
@@ -50,7 +49,7 @@ public class ApplicationContextConfig {
 		//sessionBuilder.addProperties(getHibernateProperties());
 		sessionBuilder.addAnnotatedClass(User.class);
 
-		sessionBuilder.addAnnotatedClass(Blog.class);
+		/*sessionBuilder.addAnnotatedClass(Blog.class);
 		sessionBuilder.addAnnotatedClass(Chat.class);
 		sessionBuilder.addAnnotatedClass(Event.class);
 		sessionBuilder.addAnnotatedClass(Friend.class);
@@ -59,13 +58,13 @@ public class ApplicationContextConfig {
 
 
 		sessionBuilder.addAnnotatedClass(ChatForum.class);
-		sessionBuilder.addAnnotatedClass(ChatForumComment.class);
-		sessionBuilder.addAnnotatedClass(User.class);
+		sessionBuilder.addAnnotatedClass(ChatForumComment.class);*/
+		
 
 		return sessionBuilder.buildSessionFactory();
 	}
 
-*/	@Autowired
+	@Autowired
 	@Bean(name = "transactionManager")
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
 		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
@@ -73,11 +72,11 @@ public class ApplicationContextConfig {
 		return transactionManager;
 	}
 
-	@Autowired
+	/*@Autowired
 	@Bean(name = "userDetailsDAO")
 	public UserDAO getUserDetailsDAO(SessionFactory sessionFactory) {
 		return new UserDAO(sessionFactory);
-	}
+	}*/
 
 
 
