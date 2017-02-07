@@ -1,0 +1,40 @@
+<div ng-app="myApp" ng-controller="ForumController as ctrl">
+     
+     
+      
+      <div class="content">
+        <div class="container">
+          <div class="row" style=" margin: 20px 0 20px 0;
+    padding: 20px;">
+       
+            <ul class="post-grid"  >
+          
+          <li ng-repeat="forum in ctrl.forums" class="col-s-4"  ng-class="{ 'reset-s' : $index%3==0 }"  >
+           <div >
+            <a ng-href="#/view_forum" ng-click="ctrl.getSelectedForum(forum.forumid)" style="margin-top: 20px;padding-top: 20px;font-size: 30px;font:bold;color: blue;">
+           <div style="text-transform: uppercase;"> <b>{{forum.forum_topic}}</b></div>
+            
+             </a><br>
+            <cite style="color:black;font:bold;"><b>Posted By:{{forum.username}}</b></cite><br><br><br>
+            <p style="color:black;">{{forum.forum_question | limitTo:70}}...</p>
+            <a ng-href="#/view_forum" ng-click="ctrl.getSelectedForum(forum.forumid)">Read More</a><br><br> <!-- ng-click="ctrl.getSelectedBlog(blog.blogid)" -->
+           <!--  <p class="fa fa-comment push-left"> {{blog.comments.length}}
+            </p>
+            <p class="fa fa-heart push-right"> {{blog.likes}}
+            </p> -->
+             </div>
+          </li>
+         
+        </ul>
+    
+            
+          </div>
+         
+        </div>
+        
+    </div>
+    
+    
+    
+  
+  </div>

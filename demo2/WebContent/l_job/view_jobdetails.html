@@ -1,0 +1,24 @@
+<div ng-app="myApp" ng-controller="JobController as ctrl">
+<div class="post" >
+          <div>
+            
+            <h2 style="margin-top: 20px;padding-top: 20px;font-size: 30px;font:bold;color: blue;">{{selectedJob.job_title}}</h2>
+           
+            <cite style="font:bold; color:black;">Posted On {{selectedJob.date_time | date}}</cite><br><br><br>
+            <div class="post-body" style="color:black;">
+             <p>
+               {{selectedJob.description}}
+             </p> 
+             
+            </div>
+            <div class="feature-btns">
+								
+								 <a href="#" class="btn btn-warning" role="button" ng-click="ctrl.applyForJob(job.jobid)"> Apply For Job</a><!-- <span class="glyphicon glyphicon-star-empty"></span> -->
+								 </div>
+            
+           
+        </div>
+      </div>
+        
+            </div>
+           

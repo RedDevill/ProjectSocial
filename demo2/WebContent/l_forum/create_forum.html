@@ -1,0 +1,54 @@
+<div class="container" ng-app="myApp" ng-controller="ForumController as ctrl">
+
+
+<div ng-show="!loggedIn">
+<div class="alert alert-danger fade in">
+      You are not logged in.. Please login &nbsp; <a href="#/login"> here</a>
+        &nbsp; to Create a forum
+         </div>
+         
+         <div>
+            If you are not  register , you can register <a href="#/registration">here</a>
+            </div>
+
+</div>
+
+<div ng-show="loggedIn">
+	<div class="row" style="text-align: center;line-height: 300%;font-size: 30px;">
+		<h2>Forum Details</h2>
+	</div>
+	<form ng-submit="ctrl.submit()" method="get">
+	 <div class="row">
+    
+    <div class="col-md-6">
+    						<div class="widget-area no-padding blank">
+								<div class="status-upload">
+									
+										<input type="text" name="topic" id="title" placeholder="Enter Forum Topic" ng-model="ctrl.forum.forum_topic" style="height:50px;width:200px;background: #CFCFCF;color:black;font:bold;"></input>
+									
+									
+									
+								</div>
+							</div>
+						</div>
+        
+    </div>
+    
+    <div class="row">
+    
+    <div class="col-md-6">
+    						<div class="widget-area no-padding blank">
+								<div class="status-upload">
+									
+										<textarea id="question" name="question" ng-model="ctrl.forum.forum_question" placeholder="Enter Forum Question" style="background: #CFCFCF;color:black;font:bold;"></textarea>
+									
+										<input type="submit" class="btn btn-success green" value="Create Forum"/> 
+									
+								</div><!-- Status Upload  -->
+							</div><!-- Widget Area -->
+						</div>
+						</div>
+						</form>
+        </div>
+    </div>
+    
