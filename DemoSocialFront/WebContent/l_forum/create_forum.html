@@ -1,0 +1,53 @@
+<div class="container" ng-app="myApp" ng-controller="ForumController as ctrl">
+
+<br>
+<br>
+<div ng-show="!loggedIn">
+<div class="alert alert-danger fade in">
+<br>
+
+      You are not logged in.. Please login &nbsp; <a href="#/login"> here</a>
+        &nbsp; to Create a forum
+         </div>
+         <br>
+         <div>
+            If you are not  register , you can register <a href="#/registration">here</a>
+            </div>
+
+</div>
+
+<<div ng-show="loggedIn">
+	<div class="container" style="margin-top:80px; margin-left:15%;">
+	<div class="row">
+      <div class="col-md-8">
+        <div class="well well-sm">
+          <form class="form-horizontal" ng-submit="ctrl.submit()" method="get">
+          <fieldset>
+            <legend class="text-center">Create Forum</legend>
+    		<br>
+            <!-- ID input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label text-left" for="id">Forum Topic :</label>
+              <div class="col-md-8">
+                <input id="title" name="title" ng-model="ctrl.forum.forum_topic" type="text" placeholder="Enter Forum topic" class="form-control"/>
+              </div>
+            </div>
+   
+    
+            <!-- Description body -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="message">Forum Question :</label>
+              <div class="col-md-8">
+                <textarea class="form-control" id="question" ng-model="ctrl.forum.forum_question" name="question" placeholder="Enter Forum Question" rows="5"></textarea>
+              </div>
+            </div>
+    
+            <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-center">
+                <button id="submit" type="submit" class="btn btn-hero btn-primary btn-lg ">Create Forum</button>
+              </div>
+            </div>
+          </fieldset>
+          </form>
+</div>

@@ -1,0 +1,59 @@
+<div class="container" style="position: relative;font-size: 20px;width:100%;" >
+<div ng-show="!loggedIn">
+<div class="alert alert-danger fade in">
+      You are not logged in.. Please login &nbsp; <a href="#/login"> here</a>
+        &nbsp; to Create a blog
+         </div>
+         
+        
+
+</div>
+
+<div ng-show="loggedIn">
+	<table id="search" class="table table-hover table-condensed">
+    				<thead>
+						<tr>
+							<th style="width:10%">UserName</th>
+							<th style="width:10%">Name</th>
+							<th style="width:10%">EmailId</th>
+							<th style="width:10%" class="text-center">Mobile</th>
+							<th style="width:10%" class="text-center">Address</th>
+							<th style="width:10%" class="text-center">Status</th>
+							<th style="width:10%" class="text-center">Role</th>
+							<th style="width:10%" class="text-center">Reason</th>
+							<th style="width:10%" class="text-center">IsOnline</th>
+							<th style="width:13%"></th>
+							<th style="width:13%"></th>
+						</tr>
+					</thead>
+					<tbody ng-app="myApp" ng-controller="UserController as ctrl">
+						<tr ng-repeat="user in ctrl.users" >
+							<td data-th="UserName">
+								{{user.username}}
+							</td>
+							<td data-th="Name" >{{user.name}}</td>
+							<td data-th="EmailId">{{user.email}}
+								<!-- <input type="number" class="form-control text-center" value="1"> -->
+							</td>
+							<td data-th="Mobile" class="text-center">{{user.mobile}}</td>
+							<td data-th="Address" class="text-center">{{user.address}}</td>
+							<td data-th="Status" class="text-center">{{user.status}}</td>
+							<td data-th="Role" class="text-center">{{user.role}}</td>
+							<td data-th="Reason" class="text-center">{{user.reason}}</td>
+							<td data-th="IsOnline" class="text-center">{{user.isonline}}</td>
+							<td class="actions" data-th="">
+								
+								<a href="#" ng-click="ctrl.accept(user.username)">Accept</a>								
+							</td>
+							<td class="actions" data-th="">
+							
+								<a href="#" ng-click="ctrl.reject(user.username)">Reject</a>								
+							</td>
+							
+						</tr>
+					</tbody>
+					
+				</table>
+			<!-- 	</div> -->
+				</div>
+</div>

@@ -1,0 +1,188 @@
+<div class="container" ng-app="myApp" ng-controller="ForumController as ctrl"style="position: relative;">
+
+<div class="post" >
+          <div>
+            
+            <h2 style="margin-top: 20px;padding-top: 20px;font-size: 25px;font:bold;color: #f4d03f;">{{selectedforum.forum_topic}}</h2>
+            <br>
+            <cite style="font:bold; color:black;">Posted By {{selectedforum.username}} on {{selectedforum.created_date | date}}</cite><br><br><br>
+            <div class="post-body" style="color:black;">
+             <p>
+               {{selectedforum.forum_question}}
+             </p> 
+            </div>
+            
+            <div class="comments" ng-controller="ForumCommentController as commentctrl">
+             
+            <!--   <button class="fa fa-heart" ng-click="post.likes = post.likes+1"> {{post.likes}}</button><br><br><br> -->
+          <br>    <h3 style="color: black;text-decoration:underline;font: bold;font-size: 20px;font-style: normal;text-transform: uppercase;float:center;">Comments</h3><br><br>
+          <div style="display: block;padding: 10px;">
+              <ul style="color:black;font: bold;font-size: 15px;font-style: normal;">
+               <li ng-repeat="value in fetchComments">
+               <div style="border: inset;padding: 20px;margin: 10px;">
+                <div style="padding:10px;">
+                 <p style="color:orange ;font-size: 18px;"><b>{{value.username}}</b></p>
+                 <p style="color:black ;font-size: 13px;"><b> {{value.commented_date |date}}</b></p>
+                 </div>
+                 <div>
+                 <p style="color: black;font-size: 15px;"> {{value.forum_comment}}<p>
+               </div>
+               </div>
+               </li>
+              </ul><br><br>
+             </div>
+              <form name="commentForm" ng-submit="commentForm.$valid && commentctrl.submit(selectedforum.forumid)" novalidate>
+              
+                
+                <!-- <h3 style="color: black;font: bold;font-size: 20px;font-style: normal;text-transform: uppercase;">Add Comment</h3>
+                  <br><textarea ng-model="commentctrl.forumcomment.forum_comment" cols="30" rows="10" required></textarea>
+               
+                    <input type="submit" value="Submit" /> --> 
+              <div class="form-group">
+              <label class="col-md-3 control-label" for="message">Add Comment :</label>
+              <div class="col-md-8">
+                <textarea  ng-model="commentctrl.forumcomment.forum_comment" class="form-control" id="forumcomment" name="forumcomment" placeholder="Enter comment here..." rows="5"></textarea>
+              </div>
+            </div>
+            <br>
+                    <input type="submit" class="btn btn-hero btn-primary btn-lg" value="Submit" />
+                </form>
+            </div>
+        </div>
+      </div>
+        
+         
+        </div>
+      </div>
+
+
+</div>
+
+<!-- <body>
+<div>
+
+<style>
+
+.forum.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.forum .fa {
+    width: 1em;
+    text-align: center;
+}
+
+.forum.table th.cell-stat {
+    width: 6em;
+}
+
+.forum.table th.cell-stat-2x {
+    width: 14em;
+}
+
+</style>
+</div>
+
+
+
+<div class="container" style="margin-top: 35px">
+  <div class="page-header page-heading">
+    <h1 class="pull-left">Forums</h1>
+    <ol class="breadcrumb pull-right where-am-i">
+      <li><a href="#">Forums</a></li>
+      <li class="active">List of topics</li>
+    </ol>
+    <div class="clearfix"></div>
+  </div>
+  <p class="lead">This is the right place to discuss any ideas, critics, feature requests and all the ideas regarding our website. Please follow the forum rules and always check FAQ before posting to prevent duplicate posts.</p>
+  <table class="table forum table-striped">
+    <thead>
+      <tr>
+        <th class="cell-stat"></th>
+        <th>
+          <h3>Important</h3>
+        </th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Topics</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Posts</th>
+        <th class="cell-stat-2x hidden-xs hidden-sm">Last Post</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
+        <td>
+          <h4><a href="#">Frequently Asked Questions</a><br><small>Some description</small></h4>
+        </td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">9 542</a></td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">89 897</a></td>
+        <td class="hidden-xs hidden-sm">by <a href="#">John Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>
+      </tr>
+      <tr>
+        <td class="text-center"><i class="fa fa-exclamation fa-2x text-danger"></i></td>
+        <td>
+          <h4><a href="#">Important changes</a><br><small>Category description</small></h4>
+        </td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
+        <td class="hidden-xs hidden-sm">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 1 years ago</small></td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table forum table-striped">
+    <thead>
+      <tr>
+        <th class="cell-stat"></th>
+        <th>
+          <h3>Suggestions</h3>
+        </th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Topics</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Posts</th>
+        <th class="cell-stat-2x hidden-xs hidden-sm">Last Post</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center"><i class="fa fa-heart fa-2x text-primary"></i></td>
+        <td>
+          <h4><a href="#">More more more</a><br><small>Category description</small></h4>
+        </td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
+        <td class="hidden-xs hidden-sm">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>
+      </tr>
+      <tr>
+        <td class="text-center"><i class="fa fa-magic fa-2x text-primary"></i></td>
+        <td>
+          <h4><a href="#">Haha</a><br><small>Category description</small></h4>
+        </td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
+        <td class="hidden-xs hidden-sm">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 1 years ago</small></td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table forum table-striped">
+    <thead>
+      <tr>
+        <th class="cell-stat"></th>
+        <th>
+          <h3>Open discussion</h3>
+        </th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Topics</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Posts</th>
+        <th class="cell-stat-2x hidden-xs hidden-sm">Last Post</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td colspan="4" class="center">No topics have been added yet.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+</body>
+ Run code snippetExpand snippet
+ -->

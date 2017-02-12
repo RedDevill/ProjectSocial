@@ -1,0 +1,87 @@
+                
+<div class="container"style="margin-top:50px; margin-left:40%;" ng-app="myApp" ng-controller="UserController as ctrl">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+            <legend ><a  href="http://www.jquery2dotnet.com"><i style="color:#f4d03f" class="glyphicon glyphicon-globe"></i></a>  Sign up!</legend>
+            <br>
+            <br>
+            <form action="" ng-submit="ctrl.submit()" method="post" class="form" role="form">
+            
+            <div class="row">
+                <div class="col-xs-2 col-md-8">
+            <input class="form-control" id="username" ng-model="ctrl.user.username" name="username" placeholder="User Name" type="text" required/>
+           		</div>
+           	</div>
+              <input class="form-control" id="name" ng-model="ctrl.user.name" name="fullname" placeholder="Full Name" type="text"
+                        required autofocus />
+                        
+            <input class="form-control" id="email" name="email" ng-model="ctrl.user.email" placeholder="Your Email" type="email" required/>
+            <div class="row">
+                <div class="col-xs-2 col-md-8">
+            <input class="form-control" id="password" name="password" ng-model="ctrl.user.password" placeholder="Password" type="password" required/>
+           		</div>
+           		<div class="col-xs-2 col-md-8">
+            <input class="form-control" id="confirmpassword" name="reenterpassword" placeholder="Re-Enter Password" type="password" />
+ 				</div>
+ 			</div>
+ 			<input class="form-control" id="address" name="address" ng-model="ctrl.user.address" placeholder="Address" type="text" required/>
+ 			<input class="form-control" id="mobile" name="mobile" ng-model="ctrl.user.mobile" placeholder="Contact No." type="text" required/>         
+          	<br>
+            <label for="">Date of Birth</label>
+            <br>
+            <br>
+           
+        	<div class="col-sm-8 input-group date">
+          	<input type="text" class="form-control inputstl" id="dateofbirth" name="dateofbirth" placeholder="Enter Date"><span class="input-group-addon"><i style="color:#f44d3c" class="glyphicon glyphicon-calendar"></i></span>
+         	</div>
+            <br>
+            <br>
+            <label  for="">Gender :&nbsp;</label>
+            <label class="radio-inline">
+                <input type="radio" name="gender" id="inlineCheckbox1" value="male" />
+                Male
+            </label>
+            <label class="radio-inline">
+                <input  type="radio" name="gender" id="inlineCheckbox2" value="female" />
+                Female
+            </label>
+            <br />
+            <br />
+            <label  for="">Role :&nbsp;</label>
+            <label class="radio-inline">
+                 <input type="radio" name="radio" id="student" required="required" value="student" ng-model="ctrl.user.role"> Student
+            </label>          
+            <label class="radio-inline">
+                  <input type="radio"  name="radio" id="alumni" value="alumni" required="required" ng-model="ctrl.user.role"> Alumni
+            </label>
+            <label class="radio-inline">
+                  <input type="radio" name="radio" id="employee" value="employee" required="required" ng-model="ctrl.user.role"> Employee
+            </label>
+              <br>
+              <br>
+              <br>
+            <button class="btn btn-lg btn-primary btn-block btn-danger" type="submit" onclick="return validatePassword()"">Sign Up
+             </button>
+            
+            </form> <!-- /form -->
+            <script>
+
+function validatePassword(){
+	var password = document.getElementById("password");
+	var confirm_password = document.getElementById("confirmpassword");
+if(password.value != confirm_password.value) {
+  alert("Passwords Don't Match");
+  return false;
+} 
+}
+
+ password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword; 
+
+</script>
+</div>    
+    </div>
+        </div> <!-- ./container -->
+        
+        
+        
