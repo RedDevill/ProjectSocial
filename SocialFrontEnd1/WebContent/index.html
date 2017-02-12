@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app ="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Social Club</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+   	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-cookies.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+  	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+ 
+  <!-- For CHAT	 -->
+  	<script src="lib/js/sockjs.js" type="text/javascript"></script>
+	<script src="lib/js/stomp.js" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<script src="lib/js/skel.min.js"></script>
+		<script src="lib/js/skel-panels.min.js"></script>
+		<script src="lib/js/init.js"></script>
+		<script src="lib/js/modernizr-2.6.2.min.js"></script>
+		
+  	<link rel="stylesheet" href="css1/styles.css" />
+    <link rel="stylesheet" href="css1/header.css" />
+    <link rel="stylesheet" href="css1/footer-distributed-with-address-and-phones.css" />
+</head>
+
+
+<body >
+<div class="container-fluid"> 
+<div ng-include src="'l_common/header1.html'"></div>
+ <!-- <div ng-include src="'l_common/header.html'"></div> -->
+</div>
+<div class="container-fluid" style="background-color: #fff ;width:100%; min-height:100%;margin-left:10px;position: relative;"> 
+ <br>
+ <br><div ng-view  ></div>
+</div>
+<div ng-include src="'l_common/footer.html'"></div>
+</body>
+<script src="app.js"></script>
+<script src="l_user/UserController.js"></script>
+<script src="l_user/UserService.js"></script>
+<script src="l_blog/BlogController.js"></script>
+<script src="l_blog/BlogCommentController.js"></script>
+<script src="l_blog/BlogService.js"></script>
+<script src="l_forum/ForumController.js"></script>
+<script src="l_forum/ForumCommentController.js"></script>
+<script src="l_forum/ForumService.js"></script>
+<script src="l_event/EventController.js"></script>
+<script src="l_event/EventService.js"></script>
+<script src="l_job/JobController.js"></script>
+<script src="l_job/JobService.js"></script>
+<script src="l_friend/FriendController.js"></script>
+<script src="l_friend/FriendService.js"></script>
+<script src="l_chat/ChatController.js"></script>
+<script src="l_chat/ChatService.js"></script>
+
+
+</html>

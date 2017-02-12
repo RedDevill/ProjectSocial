@@ -1,0 +1,63 @@
+
+
+
+
+
+<div ng-app="myApp">
+
+<div class="container"  ng-controller="UserController as ctrl" style="max-width: 80%;height:80%;" >
+    <form name="form" method="post" style="max-width: 80%;height:80%;padding: 10px; background-color: #ffffff; margin: 0 auto; border-radius:0.3em;"  ng-submit="ctrl.login()">
+
+    <div class="omb_login" >
+    	<h3 class="omb_authTitle" >LOGIN </h3>
+	
+
+	
+		<div class="row omb_row-sm-offset-3" >
+			<div class="col-xs-12 col-sm-9">	
+			    <form class="omb_loginForm" action="" autocomplete="off" method="POST" >
+					<div class="input-group" >
+						<span class="input-group-addon"><i class="fa fa-user"></i></span>
+						
+						<input type="text" class="form-control" name="username" ng-model="ctrl.user.username" placeholder="User Name" required="required">
+						
+					</div>
+					<span class="help-block"></span>
+										
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+						<input  type="password" class="form-control" name="password" placeholder="Password" ng-model="ctrl.user.password" required="required">
+					</div>
+                    <span class="help-block"></span>
+
+					<!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button> -->
+					<input type="submit" value="LOGIN" style="width: 300px; margin: 0 auto; " class="btn btn-lg btn-primary btn-block">
+				</form>
+			</div>
+    	</div>
+	  	
+	</div>
+</form>
+</div>
+</div>
+  
+<!-- <div ng-app="myApp" ng-controller="UserController as ctrl">
+<form name="form" ng-submit="ctrl.login()">
+<table>
+<tr>
+<td>UserName:</td>
+<td><input type="text" name="username"></td>
+</tr>
+<tr>
+<td>Password:</td>
+<td><input type="password" name="password"></td>
+
+</tr>
+<tr>
+<td><input type="submit" value="Login"></td>
+</tr>
+
+</table>
+</form>
+
+</div> -->

@@ -1,0 +1,100 @@
+
+
+.banner-hold-main {
+    position: relative;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.banner-img-content {
+    position: relative;
+    vertical-align: middle;
+    display: table;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+
+.banner-content {
+    max-width: 1200px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    z-index: 12;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: table-cell;
+    padding: 0px 30px;
+}
+
+.faster-headline {
+    font-size: 70px !important;
+}
+.headline {
+    font-family: "Primary-Bold",Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-style: normal;
+    margin-top: -6px;
+    margin-bottom: 6px;
+    color: #fff;
+    line-height: 100%;
+    font-weight: bolder;
+    font-size: 84px;
+}
+
+.content-right {
+    text-align: right;
+}
+
+
+.banner-hold-main .subheadline {
+    margin-top: -1px;
+    margin-bottom: 9px;
+    font-size: 22px;
+}  
+.banner-hold-main .subheadline {
+    margin: -2px 0 8px;
+    font-family: "Primary-Regular", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.subheadline {
+    margin-top: -5px;
+    margin-bottom: 18px;
+    font-weight: normal;
+    font-size: 36px;
+}
+/*
+h5, .h5, h6, .h6, h7, .h7, h8, .h8 {
+    letter-spacing: -0.25px;
+}
+h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, .h1, .h2, .h3, .h4, .h5, .h6, .h7, .h8, .h9, .h10, .h11 {
+    font-family: "Primary-Regular",Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-weight: normal;
+    line-height: 100%;
+    text-rendering: optimizeLegibility;
+}
+h5, .h5 {
+    margin: 0;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 13px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 1.4;
+    text-rendering: optimizeSpeed;
+    text-transform: uppercase;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+*/

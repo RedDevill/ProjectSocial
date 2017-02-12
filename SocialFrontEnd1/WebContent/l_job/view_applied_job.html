@@ -1,0 +1,62 @@
+<div class="container" ng-app="myApp" ng-controller="JobController as ctrl">
+<div ng-show="!loggedIn">
+<div class="alert alert-danger fade in">
+      You are not logged in.. Please login &nbsp; <a href="#/login"> here</a>
+        &nbsp; to view Friend List
+         </div>
+         
+         <div>
+            If you are not  register , you can register <a href="#/registration">here</a>
+            </div>
+
+</div>
+
+<div ng-show="loggedIn"  >
+	<div class="row">
+		<h2>Search Job</h2>
+           <div id="custom-search-input">
+                            <div class="input-group col-md-6">
+                                <input type="text" class="  search-query form-control" placeholder="Search" ng-model="searchString" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+	</div>
+	
+	<div ng-repeat="job in getAppliedJob | filter:searchString">
+	<section class="featured-jobs">
+    <div class="container">
+		<div class="center-block"><h1>Applied Jobs</h1></div>
+		<div class="row">
+
+				
+				<div class="col-sm-6 col-md-4">
+					
+						<div class="thumbnail" style="font-size: 5px;">
+								<p style="font-size: 15px;color:black;font:bold">JobId:  {{job.jobid}}</p> 
+								<a href="#/view_jobdetails" class="btn btn-primary" role="button" ng-click="ctrl.getJobDetails(job.jobid)"><span class="glyphicon glyphicon-file"></span> View Details</a>
+								<a href="" class="feature-link"><h3>{{job.job_title}}</h3></a>
+								<p style="font-size: 15px;color:black;">Qualification:{{job.qualification}}</p>
+								<span class="meta" style="font-size: 15px;color:black;">Posted on: {{job.date_time|date}}</span>
+								<!-- <div class="feature-btns">
+								
+								 <a href="#" class="btn btn-warning" role="button" ng-click="ctrl.applyForJob(job.jobid)"> Apply For Job</a><span class="glyphicon glyphicon-star-empty"></span>
+								 </div> -->
+						</div>
+					
+				</div>
+
+			
+
+			</div>
+		
+	</div>
+</section>
+	
+	</div>
+	</div>
+	
+</div>

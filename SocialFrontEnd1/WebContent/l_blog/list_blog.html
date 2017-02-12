@@ -1,0 +1,48 @@
+<div ng-app="myApp" ng-controller="BlogController as ctrl">
+     
+     
+      
+      <div class="content">
+        <div class="container">
+          <div class="row" >
+        
+            <ul class="post-grid"  >
+           
+          <li ng-repeat="blog in ctrl.blogs" class="col-s-4"  ng-class="{ 'reset-s' : $index%3==0 }"  >
+            <a ng-href="#/view_blog" ng-click="ctrl.getSelectedBlog(blog.blogid)" style="margin-top: 20px;padding-top: 20px;font-size: 40px;font:bold;color: blue;">
+            <b>{{blog.blogtitle}}</b>
+            
+             </a><br>
+            <cite style="color:black;font:bold;"><b>Posted By:{{blog.username}}</b></cite><br><br><br>
+            <p style="color:black;">{{blog.description | limitTo:70}}...</p>
+            <a ng-href="#/view_blog" ng-click="ctrl.getSelectedBlog(blog.blogid)">Read More</a> <!-- ng-click="ctrl.getSelectedBlog(blog.blogid)" -->
+           <!--  <p class="fa fa-comment push-left"> {{blog.comments.length}}
+            </p>
+            <p class="fa fa-heart push-right"> {{blog.likes}}
+            </p> -->
+          </li>
+        </ul>
+       
+            
+          </div>
+         
+        </div>
+        
+    </div>
+    
+    
+    
+   <!--  Welcome To Blogs
+    <div>
+   
+    <div ng-repeat="blog in ctrl.blogs">
+     <a ng-href="#/list_blog" ng-click="ctrl.fetchAllBlogs()">List of blogs </a>
+    Title:{{blog.blogtitle}}<br>
+    Description:{{blog.description}}
+  
+    
+    </div>
+     
+   
+     </div> -->
+  </div>
