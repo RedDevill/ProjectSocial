@@ -1,0 +1,48 @@
+<div class="container" style="position: relative;font-size: 20px;width:100%;" >
+<div ng-show="!loggedIn">
+<div class="alert alert-danger fade in">
+      You are not logged in.. Please login &nbsp; <a href="#/login"> here</a>
+        &nbsp; to Create a blog
+         </div>
+         
+         <div>
+            If you are not  register , you can register <a href="#/registration">here</a>
+            </div>
+
+</div>
+
+<div ng-show="loggedIn">
+	<table id="search" class="table table-hover table-condensed">
+    				<thead>
+						<tr>
+							<th style="width:10%">Name</th>
+							<th style="width:10%">Address</th>
+							<th style="width:10%">EmailId</th>
+							<th style="width:10%">Role</th>
+							<th style="width:10%" class="text-center">Mobile</th>
+							<th style="width:13%"></th>
+						</tr>
+					</thead>
+					<tbody ng-app="myApp" ng-controller="UserController as ctrl">
+						<tr ng-repeat="user in ctrl.users" >
+							<td data-th="Name">
+								{{user.name}}
+							</td>
+							<td data-th="Address" >{{user.address}}</td>
+							<td data-th="EmailId">{{user.email}}
+								<!-- <input type="number" class="form-control text-center" value="1"> -->
+							</td>
+							<td data-th="Role">{{user.role}}
+								<!-- <input type="number" class="form-control text-center" value="1"> -->
+							</td>
+							<td data-th="Mobile" class="text-center">{{user.mobile}}</td>
+							<td class="actions" data-th="">
+								<!-- <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button> -->
+								<a href="#" ng-click="ctrl.friendRequest(user.username)">Send Request</a>								
+							</td>
+						</tr>
+					</tbody>
+					
+				</table>
+				</div>
+</div>
