@@ -2,6 +2,7 @@
 	<div class="row">
 		<h2>Search Job</h2>
            <div id="custom-search-input">
+           	<br>
                             <div class="input-group col-md-6">
                                 <input type="text" class="  search-query form-control" placeholder="Search" ng-model="searchString" />
                                 <span class="input-group-btn">
@@ -12,6 +13,8 @@
                             </div>
                         </div>
 	</div>
+	<br>
+	<br>
 	<div class="center-block" style="font-size: 20px;font:bold;"><h1>Searched Jobs</h1></div>
 	<div ng-repeat="job in AllJobs | filter:searchString"><!-- ng-repeat -->
 	<section class="featured-jobs">
